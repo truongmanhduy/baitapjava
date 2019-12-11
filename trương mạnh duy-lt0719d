@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+		<table border="1">
+			<tr>
+				<td>number1</td>
+				<td><input type="text" id="number1"></td>
+			</tr>
+			<tr>
+				<td>number2</td>
+				<td><input type="text" id="number2"></td>
+			</tr>
+			<tr>
+				<td>option</td>
+				<td>
+					<select id="pheptoan">
+						<option value="cong">cộng</option>
+						<option value="tru">trừ</option>
+						<option value="nhan">nhân</option>
+						<option value="chia">chia</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>result</td>
+				<td><input type="text" id="ketqua"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="button" value="tinhtoan" onclick="tinhtoan()"></td>
+			</tr>
+		</table>
+		<script>
+			function tinhtoan(){
+				console.log("bat dau tinh toan");
+				var number1=document.getElementById("number1").value;
+				var number2=document.getElementById("number2").value;
+				var pheptoan=document.getElementById("pheptoan").value;
+				console.log(number1);
+				console.log(number2);
+				console.log(pheptoan);
+				number1=parseFloat(number1);
+				number2=parseFloat(number2);
+				// if (pheptoan=='cong'){
+				// 	kq=number1+number2;
+				// 	document.getElementById('ketqua').value=kq;
+				// }else if (pheptoan=='tru'){
+				// 	kq=number1-number2
+				// 	document.getElementById('ketqua').value=kq;
+				// }else if (pheptoan=='nhan'){
+				// 	kq=number1*number2
+				// 	document.getElementBId('ketqua').value=kq;
+				// }else{
+				// 	alert("phep toam phai co trong danh sách");
+				// }
+				switch(pheptoan){
+					case 'cong':
+					var kq=number1+number2;
+					document.getElementById('ketqua').value=kq;
+					break;
+					case 'tru':
+					var kq=number1-number2;
+					document.getElementById('ketqua').value=kq;
+					break;
+					case 'nhan':
+					var kq=number1*number2;
+					document.getElementById('ketqua').value=kq;
+					break;
+					case 'chia':
+					var kq=number1/number2;
+					document.getElementById('ketqua').value=kq;
+					break;
+				}
+			}
+		</script>
+</body>
+</html>
